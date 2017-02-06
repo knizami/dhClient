@@ -6,18 +6,4 @@
     <ServiceTypes>
         <StatelessServiceType ServiceTypeName="dhclientType" UseImplicitHost="true"></StatelessServiceType>
     </ServiceTypes>
-    <CodePackage Name="code" Version="1.0.1">
-        <EntryPoint>
-            <ContainerHost>
-                <ImageName>vbhadrir/dhsfclient</ImageName>
-                <Commands></Commands>
-            </ContainerHost>
-        </EntryPoint>
-        <EnvironmentVariables></EnvironmentVariables>
-        <Resources>
-            <Endpoints>
-                <Endpoint Name="WebEndpoint" Protocol="http" Port="8081" />
-            </Endpoints>
-        </Resources>
-    </CodePackage>
 </ServiceManifest>
