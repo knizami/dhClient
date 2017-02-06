@@ -5,7 +5,7 @@ module.exports = function (grunt) {
             options: {
                 esversion: 6
             },
-            all: ['Gruntfile.js', '*.js', './**/*.js']
+            all: ['Gruntfile.js', '*.js', 'dhCommon/**/*.js']
         },
         uglify: {
             options: {
