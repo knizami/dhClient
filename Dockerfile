@@ -1,6 +1,7 @@
 FROM node:6.9.5
-COPY dhclientappType/dhClient/code /usr/src/app
-USER node
+EXPOSE 8081
+RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 RUN npm install
-RUN npm start
+COPY dhclientappType/dhClient/code /usr/src/app
+CMD ["npm", "start"]
