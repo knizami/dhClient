@@ -9,7 +9,7 @@
     <CodePackage Name="code" Version="1.0.0">
         <EntryPoint>
             <ContainerHost>
-                <ImageName>vbhadrir/dhsfclient</ImageName>
+                <ImageName>knizami/dhclient:latest</ImageName>
                 <Commands></Commands>
             </ContainerHost>
         </EntryPoint>
