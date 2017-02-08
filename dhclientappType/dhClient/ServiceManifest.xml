@@ -9,10 +9,15 @@
     <CodePackage Name="code" Version="1.0.0">
         <EntryPoint>
             <ContainerHost>
-                <ImageName>vbhadrir/dhsfclient</ImageName>
+                <ImageName>knizami/dhclient:latest</ImageName>
                 <Commands></Commands>
             </ContainerHost>
         </EntryPoint>
+        <Resources>
+<Endpoints>
+<Endpoint Name="WebEndpoint" Protocol="http" Port="8081" />
+</Endpoints>
+</Resources>
         <EnvironmentVariables></EnvironmentVariables>
     </CodePackage>
 </ServiceManifest>
