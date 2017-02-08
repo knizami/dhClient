@@ -13,6 +13,11 @@
                 <Commands></Commands>
             </ContainerHost>
         </EntryPoint>
+        <Resources>
+<Endpoints>
+<Endpoint Name="WebEndpoint" Protocol="http" Port="8081" />
+</Endpoints>
+</Resources>
         <EnvironmentVariables></EnvironmentVariables>
     </CodePackage>
 </ServiceManifest>
