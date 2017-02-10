@@ -23,10 +23,10 @@ echo "Updating ImageName Completed"
 echo "================================================="
 echo "\n"
 echo "================================================="
-echo "Step 2:  Connect to cluster"
+echo "Step 2:  Connect to cluster: $SERVICEFABRICCLUSTER"
 echo "================================================="
-azure servicefabric cluster connect $ServiceFabricCluster
-[ $? -eq 0 ] || { echo "Failed to connect to $ServiceFabricCluster, Exiting..."; exit 1; }
+azure servicefabric cluster connect $SERVICEFABRICCLUSTER
+[ $? -eq 0 ] || { echo "Failed to connect to $SERVICEFABRICCLUSTER, Exiting..."; exit 1; }
 echo "================================================="
 echo "Step 3:  Copy to ImageStore"
 echo "================================================="
