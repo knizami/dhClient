@@ -6,10 +6,10 @@
   <ServiceTypes>
     <StatelessServiceType ServiceTypeName="dhclientType" UseImplicitHost="true"></StatelessServiceType>
   </ServiceTypes>
-  <CodePackage Name="code" Version="1.0.0">
+  <CodePackage Name="code" Version="1.0.1">
     <EntryPoint>
       <ContainerHost>
-        <ImageName>knizami/dhclient:latest</ImageName>
+        <ImageName>knizami/dhclient:1.0.2<ImageName>
         <Commands></Commands>
       </ContainerHost>
     </EntryPoint>
