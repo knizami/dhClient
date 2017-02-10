@@ -1,6 +1,7 @@
 #!/bin/bash
 [ -z $BUILD_BUILDNUMBER ] && { echo '$BUILDID is undefined, exiting.'; exit 1; }
 echo "Deploying release to dev for Build ID: $BUILD_BUILDNUMBER"
+echo "================================================="
 echo "Step 1:  Update the manifest versions to: $BUILD_BUILDNUMBER"
 echo "================================================="
 echo "Updating ApplicationManifest.."
@@ -20,6 +21,24 @@ sed -i "s/<ImageName>.*<\/ImageName>/<ImageName>knizami\/dhclient:$BUILD_BUILDNU
 [ $? -eq 0 ] || { echo "Failed to update ImageName, Exiting..."; exit 1; }
 echo "Updating ImageName Completed"
 echo "================================================="
+echo "\n"
+echo "================================================="
+echo "Step 2:  Connect to cluster"
+echo "================================================="
+azure servicefabric cluster connect $ServiceFabricCluster
+[ $? -eq 0 ] || { echo "Failed to connect to $ServiceFabricCluster, Exiting..."; exit 1; }
+echo "================================================="
+echo "Step 3:  Copy to ImageStore"
+echo "================================================="
 azure servicefabric application package copy dhclient fabric:ImageStore
+[ $? -eq 0 ] || { echo "Failed to copy to ImageStore, Exiting..."; exit 1; }
+echo "================================================="
+echo "Step 4:  Register Application"
+echo "================================================="
 azure servicefabric application type register dhclient
+[ $? -eq 0 ] || { echo "Failed to register application, Exiting..."; exit 1; }
+echo "================================================="
+echo "Step 5:  Create Application"
+echo "================================================="
 azure servicefabric application create fabric:/dh dhMobile $BUILD_BUILDNUMBER
+[ $? -eq 0 ] || { echo "Failed to create application, Exiting..."; exit 1; }
