@@ -1,3 +1,4 @@
+#test
 FROM node:6.9.5
 EXPOSE 8081
 RUN mkdir -p /usr/src/app
