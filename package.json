@@ -10,7 +10,10 @@
     "grunt-contrib-jshint": "~1.1.0",
     "grunt-contrib-nodeunit": "~1.0.0",
     "grunt-contrib-uglify": "~2.0.0",
-    "supertest": "^3.0.0"
+    "supertest": "^3.0.0",
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "mocha": "^2.4.5"
   },
   "dependencies": {
     "express": "*",
@@ -24,6 +27,7 @@
   },
   "repository": {},
   "scripts": {
-    "start": "node dhclient.js"
+    "start": "node dhclient.js",
+    "test": "mocha --timeout 10000"
   }
 }
