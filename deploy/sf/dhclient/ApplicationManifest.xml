@@ -10,7 +10,7 @@
         <ServiceManifestRef ServiceManifestName="dhClient" ServiceManifestVersion="1.0.1" />
     </ServiceManifestImport>
     <DefaultServices>
-        <Service Name="dhclient">
+        <Service Name="dhClient">
             <StatelessService ServiceTypeName="dhclientType" InstanceCount="[dhclient_InstanceCount]">
                 <SingletonPartition />
             </StatelessService>

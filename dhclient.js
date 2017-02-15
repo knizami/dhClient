@@ -363,4 +363,5 @@ function _getReqBody(req, callback) {
 }
 
 app.listen(_port);
+app.port = _port;
 module.exports = app;

@@ -8,6 +8,9 @@ chai.use(chaiHttp);
 
 describe('/GET clients', () => {
     it('it should GET all the clients', (done) => {
+        if (process.env.CLUSTER_URI)
+            server = ("http://" + process.env.CLUSTER_URI + ":" + server.port).replace(/\n/, '');
+        console.log("server is: " + server);
         chai.request(server)
             .get('/clients')
             .end((err, res) => {
